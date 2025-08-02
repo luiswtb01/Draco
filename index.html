@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instituto Valle Grande</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: sans-serif; line-height: 1.6; color: #2c3e50;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      min-height: 100vh;
+    }
+    header, .nav-quick, .card, .resources-section, footer {
+      background: white; margin: 20px auto; padding: 20px; border-radius: 15px;
+      max-width: 1000px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    header {
+      background: linear-gradient(135deg, #c41e3a, #8b0000); color: white; text-align: center;
+    }
+    header h1 { font-size: 2em; margin-bottom: 10px; }
+    .nav-buttons, .resources-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .nav-btn, .card button {
+      background: #c41e3a; color: white; border: none; padding: 10px 20px; border-radius: 20px;
+      cursor: pointer;
+    }
+    .card, .resources-section { padding: 20px; }
+    .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+    .info-box, .carrera-card, .resource-item {
+      background: #f8f9fa; border-left: 5px solid #c41e3a; padding: 15px; margin-top: 10px; border-radius: 10px;
+    }
+    ul { padding-left: 20px; }
+    .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.3); z-index: 1000; }
+    .progress-bar { height: 100%; background: linear-gradient(90deg, #c41e3a, #8b0000); width: 0%; transition: width 0.3s; }
+    @media (max-width: 768px) {
+      .nav-buttons, .card-header { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+<header>
+  <h1>Instituto Valle Grande</h1>
+  <p>Centro de Educación Superior Técnico Profesional</p>
+  <p>📍 San Vicente de Cañete, Lima - Perú</p>
+</header>
+<div class="nav-quick">
+  <h2>🏛️ Navegación Institucional</h2>
+  <div class="nav-buttons">
+    <button class="nav-btn" onclick="scrollToSection('nosotros-section')">Nosotros</button>
+    <button class="nav-btn" onclick="scrollToSection('carreras-section')">Carreras</button>
+    <button class="nav-btn" onclick="scrollToSection('contacto-section')">Contacto</button>
+  </div>
+</div>
+<div class="card" id="nosotros-section">
+  <div class="card-header"><div>🏛️</div><h3>Quiénes Somos</h3></div>
+  <p>Valle Grande es un Centro de Educación Superior fundado por PROSIP en 1965, reconocido oficialmente por el Ministerio de Agricultura y el Ministerio de Educación.</p>
+  <div class="info-box">
+    <h4>🎯 Misión</h4>
+    <p>Formar personas técnica y profesionalmente con visión trascendente, preparándolas para el empleo y desarrollo nacional.</p>
+  </div>
+  <div class="info-box">
+    <h4>🌟 Visión</h4>
+    <p>Ser referente en educación técnico profesional vinculada al sector productivo.</p>
+  </div>
+  <div class="info-box">
+    <h4>💎 Valores</h4>
+    <ul>
+      <li>Excelencia</li>
+      <li>Compromiso Social</li>
+      <li>Formación Integral</li>
+      <li>Tradición</li>
+      <li>Empleabilidad</li>
+    </ul>
+  </div>
+</div>
+<div class="card" id="carreras-section">
+  <div class="card-header"><div>🎓</div><h3>Carreras Profesionales</h3></div>
+  <div class="carrera-card">
+    <h4>💻 Análisis de Sistemas Empresariales</h4>
+    <p>Analiza, diseña e implementa sistemas de información empresariales.</p>
+    <div class="info-box">
+      <h4>🎯 Competencias:</h4>
+      <ul><li>Sistemas de información</li><li>Aplicaciones empresariales</li><li>Bases de datos</li></ul>
+    </div>
+    <div class="info-box">
+      <h4>💼 Campo Laboral:</h4>
+      <ul><li>Empresas públicas y privadas</li><li>Consultorías</li><li>Emprendimiento tecnológico</li></ul>
+    </div>
+  </div>
+  <div class="carrera-card">
+    <h4>🌱 Gestión Agrícola</h4>
+    <p>Gestión de sistemas agrícolas con tecnología y sostenibilidad.</p>
+    <div class="info-box">
+      <h4>🎯 Competencias:</h4>
+      <ul><li>Gestión de cultivos</li><li>Tecnologías de riego</li><li>Agricultura sostenible</li></ul>
+    </div>
+    <div class="info-box">
+      <h4>💼 Campo Laboral:</h4>
+      <ul><li>Agroindustrias</li><li>Cooperativas</li><li>Emprendimientos agrícolas</li></ul>
+    </div>
+  </div>
+</div>
+<div class="resources-section" id="contacto-section">
+  <h2 style="color:#c41e3a; text-align:center;">📞 Contacto e Información</h2>
+  <div class="resources-grid">
+    <div class="resource-item">
+      <h4>📍 Dirección</h4>
+      <ul>
+        <li>Panamericana Sur Km 144</li>
+        <li>San Vicente de Cañete 15701</li>
+      </ul>
+    </div>
+    <div class="resource-item">
+      <h4>📱 Contacto</h4>
+      <ul>
+        <li>Tel: (01) 5812261</li>
+        <li>Email: informes@vallegrande.edu.pe</li>
+      </ul>
+    </div>
+    <div class="resource-item">
+      <h4>🕒 Horario</h4>
+      <ul>
+        <li>Lun-Vie: 8am - 6pm</li>
+        <li>Sáb: 8am - 12:30pm</li>
+      </ul>
+    </div>
+    <div class="resource-item">
+      <h4>🌐 Redes</h4>
+      <ul>
+        <li>LinkedIn / Twitter / Instagram / YouTube</li>
+      </ul>
+    </div>
+    <div class="resource-item">
+      <h4>📧 Información Legal</h4>
+      <ul>
+        <li>📧 informes@vallegrande.edu.pe</li>
+        <li>Instituto Valle Grande © 2025 - San Vicente de Cañete</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>Instituto Valle Grande - Centro de Educación Superior</p>
+</footer>
+<script>
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById('progressBar').style.width = (scrollTop / height * 100) + '%';
+  });
+</script>
+</body>
+</html>
